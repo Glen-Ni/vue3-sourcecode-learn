@@ -1,6 +1,13 @@
 {
-  "name": "shared",
+  "name": "@vue3/shared",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "buildOptions":{
+    "name":"shared",
+    "formats":[
+      "esm-bundler",
+      "cjs"
+    ]
+  }
 }

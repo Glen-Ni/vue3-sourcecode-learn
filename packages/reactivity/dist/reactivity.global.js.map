@@ -1,0 +1,1 @@
+{"version":3,"file":"reactivity.global.js","sources":["../src/index.ts"],"sourcesContent":["const s = 1\r\nexport {\r\n    s\r\n}"],"names":[],"mappings":";;;QAAM,CAAC,GAAG;;;;;;;;;;;;"}

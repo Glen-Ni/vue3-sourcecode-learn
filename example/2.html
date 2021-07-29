@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="../node_modules/@vue/reactivity/dist/reactivity.global.js"></script>
+
+</head>
+<body>
+<div id="app"></div>
+
+<script>
+  const { reactive} = VueReactivity;
+  const laowang = reactive({name: 'laowang', age: 28})
+  const app = document.querySelector("#app")
+
+  // effect(() => {
+  //   app.innerHTML= laowang.name + " : " + laowang.age;
+  // })
+
+  // setTimeout(()=>{
+  //   laowang.age = 1000;
+  // }, 1000)
+</script>
+</body>
+</html>

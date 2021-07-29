@@ -1,4 +1,5 @@
-const r = 1
-export {
-    r
+const isObject = (target: any) => {
+  return typeof target === 'object' && target !== null;
 }
+
+export {isObject};

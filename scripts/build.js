@@ -2,6 +2,7 @@ const fs = require('fs');
 const execa = require('execa');
 
 const targets = fs.readdirSync('packages').filter(i => {
+  console.log('文件夹', i);
   return fs.statSync(`packages/${i}`).isDirectory();
 })
 

@@ -1,11 +1,8 @@
 // import {isObject} from "../../shared/src/index";
 // 改为
 import {isObject} from "@vue/shared";
+import {mutableHandlers, readonlyHandlers, shallowReactiveHandlers, shallowReadonlyHandlers} from "./baseHandler";
 
-const mutableHandlers = {}
-const shallowReactiveHandlers = {}
-const readonlyHandlers = {}
-const shallowReadonlyHandlers = {}
 
 export function reactive(target) {
   return createReactiveObject(target, false, mutableHandlers)
@@ -29,9 +26,19 @@ export function shallowReadonly(target) {
  * @param isReadonly
  * @param baseHandler
  */
+const reactiveMap = new WeakMap();
+const readonlyMap = new WeakMap();
+
 function createReactiveObject(target, isReadonly, baseHandler) {
-  if(isObject(target)){
+  if (!isObject(target)) {
     return target
   }
-  new Proxy(target, baseHandler)
+  const proxyMap = isReadonly ? readonlyMap : reactiveMap;
+  const existProxy = proxyMap.get(target);
+  if (existProxy) {
+    return existProxy;
+  }
+  const newProxy = new Proxy(target, baseHandler)
+  proxyMap.set(target, newProxy);
+  return newProxy;
 }

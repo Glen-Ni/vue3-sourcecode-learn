@@ -1,4 +1,6 @@
-var r = 1;
+var isObject = function (target) {
+    return typeof target === 'object' && target !== null;
+};
 
-export { r };
+export { isObject };
 //# sourceMappingURL=shared.esm-bundler.js.map

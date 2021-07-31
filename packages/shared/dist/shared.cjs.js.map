@@ -1,1 +1,1 @@
-{"version":3,"file":"shared.cjs.js","sources":["../src/index.ts"],"sourcesContent":["const r = 1\r\nexport {\r\n    r\r\n}"],"names":[],"mappings":";;;;IAAM,CAAC,GAAG;;;;"}
+{"version":3,"file":"shared.cjs.js","sources":["../src/index.ts"],"sourcesContent":["const isObject = (target: any) => {\r\n  return typeof target === 'object' && target !== null;\r\n}\r\n\r\nexport {isObject};\r\n"],"names":[],"mappings":";;;;IAAM,QAAQ,GAAG,UAAC,MAAW;IAC3B,OAAO,OAAO,MAAM,KAAK,QAAQ,IAAI,MAAM,KAAK,IAAI,CAAC;AACvD;;;;"}

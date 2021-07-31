@@ -10,17 +10,18 @@
 <div id="app"></div>
 
 <script>
-  const { reactive} = VueReactivity;
-  const laowang = reactive({name: 'laowang', age: 28})
+  const {reactive, readonly} = VueReactivity;
+  const laowang = readonly({name: 'laowang', age: 28, pets: {dog: 'wangwang', cat: 'miaomiao'}})
   const app = document.querySelector("#app")
 
   // effect(() => {
   //   app.innerHTML= laowang.name + " : " + laowang.age;
   // })
 
-  // setTimeout(()=>{
-  //   laowang.age = 1000;
-  // }, 1000)
+  setTimeout(() => {
+    laowang.age = 1000;
+    console.log(laowang.pets.cat);
+  }, 1000)
 </script>
 </body>
 </html>

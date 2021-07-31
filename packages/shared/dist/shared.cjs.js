@@ -2,7 +2,9 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var r = 1;
+var isObject = function (target) {
+    return typeof target === 'object' && target !== null;
+};
 
-exports.r = r;
+exports.isObject = isObject;
 //# sourceMappingURL=shared.cjs.js.map

@@ -11,16 +11,18 @@
 
 <script>
   const {reactive, readonly} = VueReactivity;
-  const laowang = readonly({name: 'laowang', age: 28, pets: {dog: 'wangwang', cat: 'miaomiao'}})
+  const laowang = reactive({name: 'laowang', age: 28, pets: {dog: 'wangwang', cat: 'miaomiao'}})
   const app = document.querySelector("#app")
 
   // effect(() => {
   //   app.innerHTML= laowang.name + " : " + laowang.age;
   // })
+  // laowang.age = 1000;
+  // laowang.pets.cat = 'rua!'
 
   setTimeout(() => {
-    laowang.age = 1000;
-    console.log(laowang.pets.cat);
+    console.log('pets.cat:   ', laowang.pets.cat);
+    // console.log('age:   ', laowang.age)
   }, 1000)
 </script>
 </body>
